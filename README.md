@@ -84,14 +84,33 @@ Performance is compared across:
 ---
 
 ## Project Structure
+## Project Structure
+
+```text
 rl-option-hedging/
 │
-├── env/ # Custom hedging environment
-├── baselines/ # Delta hedging strategy
-├── models/ # RL training scripts
-├── evaluation/ # Strategy comparison and metrics
-├── results/ # Plots and experiment outputs
-└── report/ # Technical report
+├── baselines/
+│   ├── __init__.py
+│   ├── black_scholes.py        # Black–Scholes pricing & delta
+│   ├── market_simulator.py     # GBM market simulation
+│   └── delta_hedging.py        # Delta hedging baseline
+│
+├── env/
+│   ├── __init__.py
+│   ├── option_hedging_env.py   # Custom Gym environment
+│   └── test_env.py             # Environment sanity check
+│
+├── evaluation/
+│   ├── __init__.py
+│   ├── run_delta_baseline.py   # Delta hedging evaluation
+│   └── evaluate_ppo_vs_delta.py # PPO vs Delta comparison
+│
+├── models/
+    ├── __init__.py
+    ├── train_ppo.py            # PPO training script
+    └── ppo_option_hedger.zip   # Trained PPO model
+
+```
 ## References
 - Buehler et al., *Deep Hedging*, Quantitative Finance (2019)
 - Halperin, *QLBS Model*, Journal of Investment Strategies (2017)
