@@ -96,6 +96,6 @@ rl-option-hedging/
 - Buehler et al., *Deep Hedging*, Quantitative Finance (2019)
 - Halperin, *QLBS Model*, Journal of Investment Strategies (2017)
 
-  ## Results
+## Results
 The PPO-based hedging agent significantly reduced total hedging cost compared to an untrained policy and demonstrated adaptive trading behavior under transaction costs. Classical delta hedging exhibited higher transaction costs and PnL variance due to discrete rebalancing.
 
